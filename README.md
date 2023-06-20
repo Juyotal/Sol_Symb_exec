@@ -121,16 +121,6 @@ b <=> !(a <= b && b <= a) <=> a > b || b > a`.
 If the domain is the Integers (which it is in our case), the DL satisfiability
 problem becomes NP-hard.
 
-Code base issues
-----------------
 
-All the VM data structures, such as stack, path and constraints, are memory arrays.
-There is a lot of copying of those arrays.
-Some of them are intended, since we need to make a new VM when starting a new
-`JUMPI` branch, and continue the other branch with the current VM.
-However, at times we simply want to extend an array without copying it
-entirely.
-Since we can't extend memory arrays natively, we just create a new larger array
-from scratch with the previous content copied, plus the desired extension.
-The code base would definitely benefit from a memory vector, either natively
-or from a library.
+
+some randos
